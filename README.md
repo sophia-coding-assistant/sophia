@@ -1,3 +1,3 @@
-#Sophia the Coding Assistant
+# Sophia the Coding Assistant
 
 ECE NTUA
