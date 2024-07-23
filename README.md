@@ -1,4 +1,4 @@
-# Sophia - An offline coding assistant
+# Sophia - An offline coding assistant mobile app
 Quantization, Fine-Tuning, Evaluation of Different Models based on Microsoft's phi-2. 
 Sophia - Coding assistant based on Phi-2
 
