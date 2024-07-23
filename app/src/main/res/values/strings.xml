@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Σοphiα</string>
+    <string name="loading_model">Loading model</string>
+    <string name="chat_label">Message</string>
+    <string name="action_send">Send</string>
+    <string name="user_label">User</string>
+    <string name="model_label">Model</string>
+<!--    <string name="disclaimer">C </string>-->
+    <string name="initial_screen_title">Welcome, click the image to test the model</string>
+</resources>
