@@ -46,7 +46,6 @@ import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.graphics.Color
-//import androidx.compose.foundation.clip
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -75,48 +74,6 @@ const val CHAT_SCREEN = "chat_screen"
 const val INITIAL_SCREEN = "initial_screen"
 
 
-
-//class MainActivity : ComponentActivity() {
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        setContent {
-//            LLMInferenceTheme {
-//                Scaffold(
-//                    topBar = { AppBar() }
-//                ) { innerPadding ->
-//                    // A surface container using the 'background' color from the theme
-//                    Surface(
-//                        modifier = Modifier
-//                            .fillMaxSize()
-//                            .padding(innerPadding),
-//                        color = MaterialTheme.colorScheme.background,
-//                    ) {
-//                        val navController = rememberNavController()
-//
-//                        NavHost(
-//                            navController = navController,
-//                            startDestination = START_SCREEN
-//                        ) {
-//                            composable(START_SCREEN) {
-//                                LoadingRoute(
-//                                    onModelLoaded = {
-//                                        navController.navigate(CHAT_SCREEN) {
-//                                            popUpTo(START_SCREEN) { inclusive = true }
-//                                            launchSingleTop = true
-//                                        }
-//                                    }
-//                                )
-//                            }
-//
-//                            composable(CHAT_SCREEN) {
-//                                ChatoRoute()
-//                            }
-//                        }
-//                    }
-//                }
-//            }
-//        }
-//    }
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -286,18 +243,6 @@ class MainActivity : ComponentActivity() {
                 }
             )
 
-//            Box(
-//                modifier = Modifier.background(MaterialTheme.colorScheme.surfaceContainer)
-//            ) {
-//                Text(
-//                    text = stringResource(R.string.disclaimer),
-//                    textAlign = TextAlign.Center,
-//                    style = MaterialTheme.typography.bodyMedium,
-//                    modifier = Modifier
-//                        .fillMaxWidth()
-//                        .padding(8.dp)
-//                )
-//            }
         }
     }
 }
@@ -342,199 +287,6 @@ fun PartialResultMessage(content: String) {
 }
 
 
-//    @Composable
-//    fun UserMessage(content: String) {
-//        Text(
-//            text = content,
-//            textAlign = TextAlign.End,
-//            modifier = Modifier
-//                .padding(8.dp)
-//                .background(Color.LightGray) // Replace with your desired background color
-//        )
-//    }
-//
-//
-//
-//    @Composable
-//    fun PartialResultMessage(content: String) {
-//        Text(
-//            text = content,
-//            textAlign = TextAlign.Start,
-//            color = Color(0xFF000000),
-//            modifier = Modifier
-//                .padding(1.dp)
-//                .background(Color(0xFFFF5722)) // Replace with your desired background color
-//        )
-//    }
-
     data class ChatMessage1(val type: MessageType, val content: String)
 
 
-
-//package com.google.mediapipe.examples.llminference
-//
-//import android.Manifest
-//import android.content.pm.PackageManager
-//import android.os.Build
-//import android.os.Bundle
-//import android.os.Environment
-//import android.util.Log
-//import androidx.activity.ComponentActivity
-//import androidx.activity.compose.setContent
-//import androidx.activity.result.contract.ActivityResultContracts
-//import androidx.compose.foundation.background
-//import androidx.compose.foundation.layout.Box
-//import androidx.compose.foundation.layout.Column
-//import androidx.compose.foundation.layout.fillMaxSize
-//import androidx.compose.foundation.layout.fillMaxWidth
-//import androidx.compose.foundation.layout.padding
-//import androidx.compose.material3.*
-//import androidx.compose.runtime.Composable
-//import androidx.compose.ui.Modifier
-//import androidx.compose.ui.res.stringResource
-//import androidx.compose.ui.text.style.TextAlign
-//import androidx.compose.ui.unit.dp
-//import androidx.core.content.ContextCompat
-//import androidx.navigation.compose.NavHost
-//import androidx.navigation.compose.composable
-//import androidx.navigation.compose.rememberNavController
-//import com.google.mediapipe.examples.llminference.ui.theme.LLMInferenceTheme
-//import java.io.File
-//import java.io.FileInputStream
-//import java.io.FileOutputStream
-//import java.io.IOException
-//
-//const val START_SCREEN = "start_screen"
-//const val CHAT_SCREEN = "chat_screen"
-//
-//class MainActivity : ComponentActivity() {
-//
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        setContent {
-//            LLMInferenceTheme {
-//                Scaffold(
-//                    topBar = { AppBar() }
-//                ) { innerPadding ->
-//                    Surface(
-//                        modifier = Modifier
-//                            .fillMaxSize()
-//                            .padding(innerPadding),
-//                        color = MaterialTheme.colorScheme.background,
-//                    ) {
-//                        val navController = rememberNavController()
-//
-//                        NavHost(
-//                            navController = navController,
-//                            startDestination = START_SCREEN
-//                        ) {
-//                            composable(START_SCREEN) {
-//                                LoadingRoute(
-//                                    onModelLoaded = {
-//                                        navController.navigate(CHAT_SCREEN) {
-//                                            popUpTo(START_SCREEN) { inclusive = true }
-//                                            launchSingleTop = true
-//                                        }
-//                                    }
-//                                )
-//                            }
-//
-//                            composable(CHAT_SCREEN) {
-//                                ChatRoute()
-//                            }
-//                        }
-//                    }
-//                }
-//            }
-//        }
-//
-//        // Check for permissions and move the file
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-//            when {
-//                ContextCompat.checkSelfPermission(
-//                    this,
-//                    Manifest.permission.READ_EXTERNAL_STORAGE
-//                ) == PackageManager.PERMISSION_GRANTED && ContextCompat.checkSelfPermission(
-//                    this,
-//                    Manifest.permission.WRITE_EXTERNAL_STORAGE
-//                ) == PackageManager.PERMISSION_GRANTED -> {
-//                    moveModelFile()
-//                }
-//                else -> {
-//                    requestPermissionsLauncher.launch(
-//                        arrayOf(
-//                            Manifest.permission.READ_EXTERNAL_STORAGE,
-//                            Manifest.permission.WRITE_EXTERNAL_STORAGE
-//                        )
-//                    )
-//                }
-//            }
-//        } else {
-//            moveModelFile()
-//        }
-//    }
-//
-//    private val requestPermissionsLauncher = registerForActivityResult(
-//        ActivityResultContracts.RequestMultiplePermissions()
-//    ) { permissions ->
-//        if (permissions[Manifest.permission.READ_EXTERNAL_STORAGE] == true &&
-//            permissions[Manifest.permission.WRITE_EXTERNAL_STORAGE] == true) {
-//            moveModelFile()
-//        } else {
-//            Log.e("MainActivity", "Permissions not granted!")
-//        }
-//    }
-//
-//    private fun moveModelFile() {
-//        val downloadsFolder = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
-//        val sourceFile = File(downloadsFolder, "phi2_cpu.bin")
-//        val destFile = File("/data/local/tmp/llm", "model.bin")
-//
-//        if (!destFile.parentFile.exists()) {
-//            destFile.parentFile.mkdirs()
-//        }
-//
-//        try {
-//            FileInputStream(sourceFile).use { input ->
-//                FileOutputStream(destFile).use { output ->
-//                    val buffer = ByteArray(1024)
-//                    var length: Int
-//                    while (input.read(buffer).also { length = it } > 0) {
-//                        output.write(buffer, 0, length)
-//                    }
-//                    Log.i("MainActivity", "Model file moved successfully!")
-//                }
-//            }
-//        } catch (e: IOException) {
-//            Log.e("MainActivity", "Error moving file", e)
-//        }
-//    }
-//
-//    @OptIn(ExperimentalMaterial3Api::class)
-//    @Composable
-//    fun AppBar() {
-//        Column(
-//            modifier = Modifier.fillMaxWidth()
-//        ) {
-//            TopAppBar(
-//                title = { Text(stringResource(R.string.app_name)) },
-//                colors = TopAppBarDefaults.topAppBarColors(
-//                    containerColor = MaterialTheme.colorScheme.primaryContainer,
-//                    titleContentColor = MaterialTheme.colorScheme.primary,
-//                ),
-//            )
-//            Box(
-//                modifier = Modifier.background(MaterialTheme.colorScheme.surfaceContainer)
-//            ) {
-//                Text(
-//                    text = stringResource(R.string.disclaimer),
-//                    textAlign = TextAlign.Center,
-//                    style = MaterialTheme.typography.bodyMedium,
-//                    modifier = Modifier
-//                        .fillMaxWidth()
-//                        .padding(8.dp)
-//                )
-//            }
-//        }
-//    }
-//}
