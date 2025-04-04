@@ -1,15 +1,15 @@
 # Sophia - An offline coding assistant mobile app
-Quantization, Fine-Tuning, and Evaluation of Different Models based on Microsoft's phi-2. 
+Quantization, Fine-Tuning, and Evaluation of Different Models based on Microsoft's Phi-2. 
 Sophia - Coding assistant mobile application based on Phi-2
 
-School of Electrical and Computer Engineering, National Technical University of Athens
+Speech & Language Processing course, School of Electrical and Computer Engineering, National Technical University of Athens
 
 ## Benchmark results of the original and quantized Phi-2
 <p float="left">
   <img src="https://github.com/sophia-coding-assistant/sophia/blob/main/img/r_i.png" height="180" />
 </p>
 
-## Benchmark results of the quantized fine-tuned models with Alpaca and TinyCodes datasets
+## Benchmark results of the quantized models, fine-tuned with Alpaca and TinyCodes datasets
 <p float="left">
   <img src="https://github.com/sophia-coding-assistant/sophia/blob/main/img/r_q.png" height="180" />
 </p>
